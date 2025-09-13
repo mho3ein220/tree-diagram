@@ -1,6 +1,6 @@
 {
   "name": "tree-diagram-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Tree Diagram component built with D3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
