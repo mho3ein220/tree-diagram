@@ -1,0 +1,72 @@
+{
+  "name": "tree-diagram-react",
+  "version": "0.1.0",
+  "description": "React Tree Diagram component built with D3",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "dist/styles.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c",
+    "test": "vitest",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "peerDependencies": {
+    "d3": ">=7",
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.1",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "jsdom": "^27.0.0",
+    "lint-staged": "^16.1.6",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "rollup": "^2.79.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "vitest": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/tree-diagram-react.git"
+  },
+  "keywords": [
+    "react",
+    "d3",
+    "tree",
+    "diagram"
+  ],
+  "author": "Your Name <you@example.com>",
+  "license": "MIT"
+}

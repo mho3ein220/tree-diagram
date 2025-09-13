@@ -1,0 +1,98 @@
+/* treeDiagram.module.css
+
+.container {
+    overflow: hidden;
+  }
+  
+  .node {
+    cursor: pointer;
+  }
+  
+  .node rect {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+  
+  .node text {
+    font: 10px sans-serif;
+  }
+  
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  } */
+/* .container {
+  background-color: #f9f9f9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.nodeBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 50px;
+} */
+.container {
+  width: 100%;
+  height: calc(100vh - 150px);
+  display: block;
+}
+
+.nodeBox {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  direction: rtl;
+  text-align: right;
+}
+.nodeBox {
+  background-color: #eeeeee;
+  border: 0px solid var(--adl-yellow)  ;
+  border-radius: 6px;
+  padding: 0px !important;
+  text-align: center;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+/* تفاوت برای گره‌هایی که فرزند دارند */
+.nodeBox.hasChildren {
+  background-color: var(--adl-yellow);
+  border-color: var(--adl-yellow);
+  font-weight: bold;
+}
+
+.zoomButtons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.zoomButton {
+  padding: 5px 13px;
+  background-color: #ffffffcc;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
