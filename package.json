@@ -1,6 +1,6 @@
 {
   "name": "tree-diagram-react",
-  "version": "0.10.5",
+  "version": "0.10.7",
   "description": "React Tree Diagram component built with D3",
   "types": "dist/index.d.ts",
   "files": [

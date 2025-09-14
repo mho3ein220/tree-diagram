@@ -28,17 +28,18 @@ Perfect for displaying hierarchical data such as **organizational structures, pr
 ## 📦 Installation
 
 ```bash
-npm install your-package-name
+npm install tree-diagram-react
 # or
-yarn add your-package-name
+yarn add tree-diagram-react
 
+```
 
 ## 🛠️ Usage
 
 ```jsx
 import React from "react";
-import TreeDiagram from "your-package-name";
-import "your-package-name/dist/style.css"; // import styles
+import TreeDiagram from "tree-diagram-react";
+import "tree-diagram-react/styles.css"; // import styles
 
 const data = {
   name: "Root",
