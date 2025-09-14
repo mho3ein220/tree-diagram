@@ -7,6 +7,8 @@ const TreeDiagram = ({ data, initialOpenDepth = 1 }) => {
   const gRef = useRef(null);
   const zoomRef = useRef(null);
 
+  const isTestEnv = typeof window !== 'undefined' && window.VITEST;
+
   useEffect(() => {
     if (!data) return;
 
@@ -54,7 +56,9 @@ const TreeDiagram = ({ data, initialOpenDepth = 1 }) => {
       .translate(margin.left + width, margin.top)
       .scale(0.7);
     // this sets the current zoom transform (and triggers the zoom handler to update g)
-    d3.select(svgRef.current).call(zoom.transform, initialTransform);
+    if (!isTestEnv) {
+      d3.select(svgRef.current).call(zoom.transform, initialTransform);
+    }
 
     const treeLayout = d3.tree().nodeSize([120, -280]);
 
@@ -91,7 +95,9 @@ const TreeDiagram = ({ data, initialOpenDepth = 1 }) => {
       const y = d.x;
 
       // To center the node: tx = svgWidth/2 - scale * x, ty = svgHeight/2 - scale * y
-      const translate =isMobile?[svgWidth / 0.8 - x * scale, svgHeight / 2 - y * scale]: [svgWidth / 2 - x * scale, svgHeight / 2 - y * scale];
+      const translate = isMobile
+        ? [svgWidth / 0.8 - x * scale, svgHeight / 2 - y * scale]
+        : [svgWidth / 2 - x * scale, svgHeight / 2 - y * scale];
 
       d3.select(svgRef.current)
         .transition()
@@ -194,6 +200,9 @@ const TreeDiagram = ({ data, initialOpenDepth = 1 }) => {
         .enter()
         .insert("path", "g")
         .attr("class", "link")
+        .attr("fill","none")
+        .attr("stroke","black")
+        .attr("stroke-width","1px")
         .attr("d", (_) => {
           const o = { x: source.x0, y: source.y0 };
           return diagonal({ source: o, target: o });

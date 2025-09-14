@@ -1,8 +1,9 @@
-import { render } from "@testing-library/react";
+import React from "react";                 // 👈 این خط باید اضافه بشه
+import { render, screen } from "@testing-library/react";
 import TreeDiagram from "../components/TreeDiagram/TreeDiagram";
 
-test("renders without crashing", () => {
+test("renders root node", () => {
   const data = { name: "root" };
-  const { getByText } = render(<TreeDiagram data={data} />);
-  expect(getByText(/root/i)).toBeTruthy();
+  render(<TreeDiagram data={data} />);
+  expect(screen.getByText(/root/i)).toBeInTheDocument();
 });

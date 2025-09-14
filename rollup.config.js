@@ -30,7 +30,7 @@ export default {
       modules: {
         generateScopedName: "[name]__[local]___[hash:base64:5]"
       },
-      extract: "dist/styles.css", // استخراج CSS به یک فایل
+      extract: "styles.css", // استخراج CSS به یک فایل
       minimize: true,
       sourceMap: true,
       plugins: []

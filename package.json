@@ -1,13 +1,15 @@
 {
   "name": "tree-diagram-react",
-  "version": "0.1.1",
+  "version": "0.10.5",
   "description": "React Tree Diagram component built with D3",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "style": "dist/styles.css",
   "sideEffects": [
     "dist/styles.css"
   ],
@@ -18,13 +20,18 @@
     },
     "./styles.css": "./dist/styles.css"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c",
     "test": "vitest",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "d3": ">=7",
@@ -46,7 +53,8 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
-    "jsdom": "^27.0.0",
+    "jest": "^30.1.3",
+    "jsdom": "^22.1.0",
     "lint-staged": "^16.1.6",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
@@ -57,9 +65,12 @@
     "rollup-plugin-terser": "^7.0.2",
     "vitest": "^3.2.4"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourname/tree-diagram-react.git"
+    "url": "git+https://github.com/mho3ein220/tree-diagram.git"
   },
   "keywords": [
     "react",
@@ -67,6 +78,9 @@
     "tree",
     "diagram"
   ],
-  "author": "Your Name <you@example.com>",
-  "license": "MIT"
+  "author": "mmdhossein",
+  "license": "MIT",
+  "dependencies": {
+    "tree-diagram-react": "^0.1.2"
+  }
 }

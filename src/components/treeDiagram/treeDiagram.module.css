@@ -1,48 +1,26 @@
-/* treeDiagram.module.css
-
 .container {
-    overflow: hidden;
-  }
-  
-  .node {
-    cursor: pointer;
-  }
-  
-  .node rect {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-  }
-  
-  .node text {
-    font: 10px sans-serif;
-  }
-  
-  .link {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
-  } */
-/* .container {
-  background-color: #f9f9f9;
-  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 
-.nodeBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 13px;
-  text-align: center;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-height: 50px;
-} */
+.node {
+  cursor: pointer;
+}
+
+.node rect {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5px;
+}
 .container {
   width: 100%;
   height: calc(100vh - 150px);
@@ -63,17 +41,16 @@
 }
 .nodeBox {
   background-color: #eeeeee;
-  border: 0px solid var(--adl-yellow)  ;
+  border: 0px solid var(--adl-yellow);
   border-radius: 6px;
-  padding: 0px !important;
+  padding: 0px ;
   text-align: center;
   font-size: 14px;
   font-family: sans-serif;
 }
 
-/* تفاوت برای گره‌هایی که فرزند دارند */
 .nodeBox.hasChildren {
-  background-color: var(--adl-yellow);
+  /* background-color: white; */
   border-color: var(--adl-yellow);
   font-weight: bold;
 }
@@ -96,3 +73,64 @@
   cursor: pointer;
   font-size: 16px;
 }
+/* /////////////////// */
+.node circle {
+    cursor: pointer;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
+  
+  .node text {
+    font: 12px sans-serif;
+  }
+  
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+  
+  .zoom-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .zoom-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .zoom-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .loading-spinner {
+    font-size: 18px;
+    color: #333;
+  }
+
